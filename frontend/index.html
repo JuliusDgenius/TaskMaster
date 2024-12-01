@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Tasks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>TaskMaster</h1>
+        <nav>
+            <a id="loginLink" href="login.html">Login</a>
+            <a id="registerLink" href="register.html">Register</a>
+            <button id="logoutButton" style="display: none;">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="notification" style="display: none; color: green; margin-bottom: 10px;"></div>
+        
+        <section id="taskList" style="display: none;">
+            <h2>Your Tasks</h2>
+            <ul id="taskContainer">
+                <!-- Tasks will be dynamically inserted here -->
+            </ul>
+            <div id="noTasksMessage" style="display: none;">You have no tasks yet.</div>
+        </section>
+
+        <section id="addTaskSection" style="display: none;">
+            <h2>Add a New Task</h2>
+            <form id="taskForm">
+                <input type="text" id="taskTitle" placeholder="Task Title" required />
+                <textarea id="taskDescription" placeholder="Task Description" required></textarea>
+                <input type="date" id="taskDueDate" required />
+                <select id="taskPriority" required>
+                    <option value="" disabled selected>Select Priority</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select><br>
+                <input type="hidden" id="taskStatus" value="pending" />
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
