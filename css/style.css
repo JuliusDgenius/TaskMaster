@@ -1,0 +1,189 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Center the body content */
+body {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navbar styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%; /* Full width for the navbar */
+}
+
+nav {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-top: 10px; /* Optional: space above the nav */
+}
+
+nav a, #logoutButton {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+#logoutButton {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    padding: 5px 10px; /* Padding for the button */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-left: 15px; /* Space between links and logout button */
+}
+
+#logoutButton:hover {
+    background-color: #C82333; /* Darker red on hover */
+}
+
+#registerLink {
+    background-color: #17A2B8;
+}
+
+#loginLink {
+    background-color: #007BFF;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Center the task container */
+#taskContainer {
+    width: 80%; /* Set a width for the task container */
+    max-width: 600px; /* Optional: limit the maximum width */
+    margin-top: 20px; /* Space between navbar and task container */
+    list-style-type: none;
+}
+
+#taskContainer li {
+    background-color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+#taskContainer h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Adjust title size */
+    text-align: center; /* Center the title text */
+}
+
+#taskContainer p {
+    margin: 5px 0; /* Add margin for spacing */
+    color: #555; /* Change description color */
+    text-align: center; /* Center the description text */
+}
+
+#taskContainer span {
+    margin: 2px 0; /* Add margin for spacing */
+    font-size: 0.9em; /* Adjust font size */
+    color: #777; /* Change span color */
+    text-align: center; /* Center the span text */
+}
+
+#taskContainer button {
+    background-color: #f44336; /* Red background for delete button */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px; /* Space above button */
+}
+
+#taskContainer button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+#taskForm input, #taskForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#taskForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#taskForm button:hover {
+    background-color: #45a049;
+}
+
+/* Profile Picture styles */
+#profilePic {
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    border-radius: 50%; /* Make it circular */
+    margin-left: 10px; /* Space to the left */
+}
+
+/* Username Display styles */
+#usernameDisplay {
+    margin-left: 10px; /* Space to the left of the profile picture */
+    font-weight: bold; /* Make the username bold */
+}
+
+/* Button styles */
+button, nav a {
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for button and link */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline for links */
+    display: inline-block; /* Make links behave like buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effect */
+}
+
+button:hover, nav a:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Specific styles for links to differentiate them */
+nav a {
+    margin-right: 15px; /* Space between links */
+}
+
+nav a:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
