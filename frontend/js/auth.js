@@ -6,7 +6,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     const email = document.getElementById('registerEmail').value;
     const password = document.getElementById('registerPassword').value;
 
-    const response = await fetch('http://localhost:3000/userController/register', {
+    const response = await fetch('https://task-master-nine-psi.vercel.app/api/v1/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, email, password }),
@@ -15,7 +15,7 @@ document.getElementById('registerForm')?.addEventListener('submit', async (e) =>
     const data = await response.json();
     if (response.ok) {
         alert('Registration successful! Please log in.');
-        window.location.href = 'login.html';  // Redirect to login page after successful registration
+        window.location.href = 'login.html';
     } else {
         alert('Error: ' + data.error);
     }
@@ -28,7 +28,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
 
-    const response = await fetch('http://localhost:3000/userController/login', {
+    const response = await fetch('https://task-master-nine-psi.vercel.app/api/v1/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
