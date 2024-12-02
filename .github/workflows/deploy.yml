@@ -33,3 +33,4 @@ jobs:
       with:
         personal_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./frontend  # Path to the frontend folder
+        target_branch: gh-pages  # Ensure deployment happens on gh-pages
