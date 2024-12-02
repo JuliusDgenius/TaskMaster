@@ -1,7 +1,7 @@
 // Function to fetch tasks for the authenticated user
 export async function fetchTasks(token) {
     try {
-        const response = await fetch('http://localhost:3000/taskController/', {
+        const response = await fetch('https://your-vercel-url/api/v1/tasks', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -20,28 +20,26 @@ export async function fetchTasks(token) {
 
         const data = await response.json();
         
-        // Check if tasks exist and return accordingly
         if (data && Array.isArray(data.tasks)) {
-            return data.tasks;  // Return tasks if they exist
+            return data.tasks;
         } else {
-            console.warn('No tasks found for the user.'); // Log a warning if no tasks are found
-            return [];  // Return an empty array if no tasks are found
+            console.warn('No tasks found for the user.');
+            return [];
         }
     } catch (error) {
-        // Enhanced error handling
         if (error instanceof TypeError) {
             console.error('Network error or invalid JSON:', error);
             throw new Error('Network error or invalid response from server.');
         } else {
             console.error('Error fetching tasks:', error);
-            throw error; // Re-throw or handle it accordingly
+            throw error;
         }
     }
 }
 
 // Function to add a new task
 export async function addTask(token, title, description, dueDate, priority) {
-    const response = await fetch('http://localhost:3000/taskController/tasks', {
+    const response = await fetch('https://task-master-nine-psi.vercel.app/api/v1/tasks', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -52,7 +50,7 @@ export async function addTask(token, title, description, dueDate, priority) {
 
     const data = await response.json();
     if (response.ok) {
-        return data.task;  // Returns the newly created task
+        return data.task;
     } else {
         throw new Error(data.error || 'Failed to add task');
     }
@@ -60,7 +58,7 @@ export async function addTask(token, title, description, dueDate, priority) {
 
 // Function to delete a task
 export async function deleteTask(token, taskId) {
-    const response = await fetch(`http://localhost:3000/taskController/tasks/${taskId}`, {
+    const response = await fetch(`https://task-master-nine-psi.vercel.app/api/v1/tasks/${taskId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`,
@@ -69,16 +67,15 @@ export async function deleteTask(token, taskId) {
 
     const data = await response.json();
     if (response.ok) {
-        return data.message;  // Success message (e.g., "Task deleted successfully")
+        return data.message;
     } else {
         throw new Error(data.error || 'Failed to delete task');
     }
-    return 'Task deleted successfully';
 }
 
-// Function to update a task (for example, updating task status or details)
+// Function to update a task
 export async function updateTask(token, taskId, updatedData) {
-    const response = await fetch(`http://localhost:3000/taskController/tasks/${taskId}`, {
+    const response = await fetch(`https://task-master-nine-psi.vercel.app/api/v1/tasks/${taskId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -89,7 +86,7 @@ export async function updateTask(token, taskId, updatedData) {
 
     const data = await response.json();
     if (response.ok) {
-        return data.task;  // Returns the updated task
+        return data.task;
     } else {
         throw new Error(data.error || 'Failed to update task');
     }
